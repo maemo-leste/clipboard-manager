@@ -1,3 +1,9 @@
+clipboard-manager (0.6.8-4) unstable; urgency=medium
+
+  * import sources to git and enable git builds
+
+ -- Ivan J. <parazyd@dyne.org>  Tue, 12 Sep 2017 23:55:00 +0200
+
 clipboard-manager (0.6.8-4+0m5) unstable; urgency=low
 
   * This entry has been added by BIFH queue processor
