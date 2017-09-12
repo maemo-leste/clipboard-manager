@@ -1,0 +1,126 @@
+clipboard-manager (0.6.8-4+0m5) unstable; urgency=low
+
+  * This entry has been added by BIFH queue processor
+    Suffix +0m5 added to package revision
+
+ -- Kojo Aapo <aapo.kojo@nokia.com>  Wed, 15 Apr 2009 15:58:01 +0300
+
+clipboard-manager (0.6.8-4) unstable; urgency=low
+
+  * Update startup script to run earlier.
+
+ -- Claudio Saavedra <csaavedra@igalia.com>  Wed, 04 Mar 2009 18:01:22 +0200
+
+clipboard-manager (0.6.8-3) unstable; urgency=low
+
+  * Install upstart script to start the manager during startup.
+
+ -- Claudio Saavedra <csaavedra@igalia.com>  Thu, 19 Feb 2009 11:24:03 +0200
+
+clipboard-manager (0.6.8-2) unstable; urgency=low
+
+  * No changes, just rebuild with Fremantle toolchain.
+  * Fixes: NB#93798 (Missing clipboard manager)
+
+ -- Claudio Saavedra <csaavedra@igalia.com>  Thu, 29 Jan 2009 16:11:10 +0200
+
+clipboard-manager (0.6.8-1) sardine; urgency=low
+
+  * manager.c: Removed debug message
+  * gconf2xsettings.c:
+  - removed debug messages
+  - do not pass the locale to add_notify as it is not implemented
+  anyway and gives a warning
+  Fixes: NB#67393
+
+ -- Johan Bilien <johan.bilien@nokia.com>  Fri, 31 Aug 2007 16:08:41 +0300
+
+clipboard-manager (0.6.7-2) sardine; urgency=low
+
+  * Fixes: NB#66047
+  * I am also the one who released 0.6.7-1
+
+ -- Gabriel Schulhof <gabriel.schulhof@nokia.com>  Mon, 20 Aug 2007 16:57:10 +0300
+
+clipboard-manager (0.6.7-1) sardine; urgency=low
+
+  * Sync GConf to XSettings on startup
+
+ -- Johan Bilien <johan.bilien@nokia.com>  Mon, 20 Aug 2007 14:07:23 +0300
+
+clipboard-manager (0.6.6-1) sardine; urgency=low
+
+  * Add the X connection to the list of fds to poll. Fixes: NB#61616
+
+ -- Johan Bilien <johan.bilien@nokia.com>  Tue, 26 Jun 2007 13:22:57 +0300
+
+clipboard-manager (0.6.5-3) sardine; urgency=low
+
+  * Added default gconf2xsettings keys file
+
+ -- Gabriel Schulhof <gabriel.schulhof@nokia.com>  Tue, 22 May 2007 13:16:10 +0300
+
+clipboard-manager (0.6.5-2) sardine; urgency=low
+
+  * Forgot to add debian/control dependencies
+
+ -- Gabriel Schulhof <gabriel.schulhof@nokia.com>  Wed, 16 May 2007 15:45:00 +0300
+
+clipboard-manager (0.6.5-1) sardine; urgency=low
+
+  * Added GConf-to-XSettings bridge
+
+ -- Gabriel Schulhof <gabriel.schulhof@nokia.com>  Mon, 14 May 2007 15:56:39 +0300
+
+clipboard-manager (0.6.4-1) sardine; urgency=low
+
+  * Added myself as uploader
+  * Fixed build-dependency from xlibs-dev to libx11-dev. Fixes: NB#56029
+
+ -- Johan Bilien <johan.bilien@nokia.com>  Fri,  4 May 2007 17:08:37 +0300
+
+clipboard-manager (0.6.4) unstable; urgency=low
+
+  * debian/rules:
+    - build with -Wall -g unconditionally
+    - always pass DEB_HOST_GNU_TYPE and DEB_BUILD_GNU_TYPE to configure
+  * Fixes: NB#51731
+
+ -- Tommi Komulainen <tommi.komulainen@nokia.com>  Thu,  3 May 2007 15:10:51 +0300
+
+clipboard-manager (0.6.3) unstable; urgency=low
+
+  * Check for NULL display.
+
+ -- Richard Hult <richard@imendio.com>  Mon, 23 May 2005 22:14:35 +0200
+
+clipboard-manager (0.6.2) unstable; urgency=low
+
+  * Use LAUNCHWRAPPER_NICE_TRYRESTART.
+
+ -- Mikael Hallendal <micke@imendio.com>  Thu, 31 Mar 2005 17:38:23 +0100
+
+clipboard-manager (0.6.1) unstable; urgency=low
+
+  * Improved the X11 checks.
+  * Added build dependency on xlibs-dev
+  
+ -- Mikael Hallendal <micke@imendio.com>  Thu, 10 Mar 2005 17:10:27 +0100
+
+clipboard-manager (0.6) unstable; urgency=low
+
+  * Removed dependency on GTK+
+
+ -- Mikael Hallendal <micke@imendio.com>  Thu, 10 Mar 2005 15:03:12 +0100
+
+clipboard-manager (0.3) unstable; urgency=low
+
+  * Second release.
+  
+ -- Mikael Hallendal <micke@imendio.com>  Fri, 29 Oct 2004 14:22:32 +0200
+  
+clipboard-manager (0.2) unstable; urgency=low
+
+  * Initial release.
+
+ -- Richard Hult <richard@imendio.com>  Fri, 08 Oct 2004 14:09:53 +0200

@@ -1,0 +1,105 @@
+2007-08-31  Johan Bilien  <johan.bilien@nokia.com>
+
+	Release 0.6.8
+
+2007-08-30  Johan Bilien  <johan.bilien@nokia.com>
+
+	* manager.c: Removed debug message
+	* gconf2xsettings.c:
+	- removed debug messages
+	- do not pass the locale to add_notify as it is not implemented
+	anyway and gives a warning
+	Fixes: NB#67393
+
+2007-08-20  Gabriel Schulhof  <gabriel.schulhof@nokia.com>
+
+	Release 0.6.7
+
+	- Sync GConf to XSettings on startup
+	- Fixes: NB#66047
+	- I am also the one who released 0.6.7-1
+
+2007-05-22  Gabriel Schulhof  <gabriel.schulhof@nokia.com>
+
+	- Added default gconf2xsettings keys file
+
+2007-05-16  Gabriel Schulhof  <gabriel.schulhof@nokia.com>
+
+	* debian/control: Forgot to add deps on gconf and glib
+
+2007-05-14  Gabriel Schulhof  <gabriel.schulhof@nokia.com>
+
+	Release 0.6.5
+
+	- Added GConf-to-XSettings bridge
+	* configure.ac: Bumped version to 0.6.5
+
+2007-05-03  Tommi Komulainen  <tommi.komulainen@nokia.com>
+
+	Release 0.6.4
+
+	* configure.ac: Bumped version
+
+2007-05-03  Tommi Komulainen  <tommi.komulainen@nokia.com>
+	
+	Silence compiler warnings
+
+	* manager.c (x_error): Return a dummy value
+	(main): Remove redundant if and unconditionally initialize the manager
+
+2005-05-17  Anders Carlsson  <andersca@imendio.com>
+
+	* manager.c (main): Add a NULL check for the display.
+
+2005-03-31  Mikael Hallendal  <micke@imendio.com>
+
+	Release 0.6.2
+
+	* configure.ac:
+	* debian/changelog:
+	- Bumped version to 0.6.2
+
+2005-03-31  Anders Carlsson  <andersca@imendio.com>
+
+	* clipboard.sh: Use LAUNCHWRAPPER_NICE_TRYRESTART.
+
+2005-03-10  Anders Carlsson  <andersca@imendio.com>
+
+	* configure.ac: Make the X11 checks a bit more sane.
+
+	Update version to 0.6.1
+	
+2005-03-10  Anders Carlsson  <andersca@imendio.com>
+
+	* Makefile.:
+	* configure.ac:
+	* manager.c: (main):
+	Don't depend on gtk+.
+
+	Update version to 0.6
+	
+2005-01-24  Anders Carlsson  <andersca@imendio.com>
+
+	* configure.ac: Update to 0.5
+
+	* Makefile.am (servicedir): Install startup script in 
+	the correct directory
+
+	* clipboard.sh: Remove --session
+
+2005-01-20  Anders Carlsson  <andersca@imendio.com>
+
+	* configure.ac: Update to 0.4
+
+	* Makefile.am (service_DATA): 
+	* clipboard.sh: Add startup script
+
+2004-10-29  Mikael Hallendal  <micke@imendio.com>
+
+	* configure.ac: Bumped version to 0.3
+	
+	* debian/changelog: Updated to 0.3
+	* debian/Makefile.am: 
+	* debian/copyright: Added
+	* clipboard-manager.c: Fixed Nokia copyright
+

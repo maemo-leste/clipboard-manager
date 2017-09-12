@@ -1,0 +1,72 @@
+Clipboard Manager Specification
+===============================
+
+Responsibilities of clipboard managers
+--------------------------------------
+
+Clipboard managers will acquire ownership of a selection named
+CLIPBOARD_MANAGER, as described in section 1.2.6 of the ICCCM. Clipboard
+managers should comply with the conventions for "Manager Selections" described
+in section 2.8 of the ICCCM. The intent is for clients to be able to request a
+variety of information or services by issuing conversion requests on this
+selection. 
+
+Clipboard managers should support conversion of the SAVE_TARGETS target on their
+manager selection. This is a side-effect target, as described in ICCCM section
+2.6.3.
+
+When a clipboard manager receives a request to convert the manager selection to
+the target SAVE_TARGETS, the named property specifies a list of targets to
+convert the CLIPBOARD selection to. If the named property exists, it must be of
+type ATOM and contain the list of targets. If the named property does not exist,
+the list of targets should be obtained by converting the CLIPBOARD to the
+TARGETS target, excluding side effect targets like DELETE, INSERT_PROPERTY and 
+INSERT_SELECTION and possibly reducing the list of targets further.
+
+If the clipboard owner supports the TARGET_SIZES target, the clipboard manager 
+may use that to determine how to handle the SAVE_TARGETS request, possibly 
+refusing to save large amounts of data, or asking the user before doing so.
+
+When handling SAVE_TARGETS, the clipboard manager should convert the CLIPBOARD
+selection to the selected targets. Then it should take over ownership of the 
+CLIPBOARD selection and offer the saved conversion results under the same targets 
+they were requested with. Note: It is important to not send the SelectionNotify
+finishing the SAVE_TARGETS conversion until all target transfers are complete, 
+since the clipboard owner will quit upon receiving the SelectionNotify and may
+not wait for the incremental transfers (using the INCR mechanism) to complete.
+
+Clipboard owners which support SAVE_TARGETS should include SAVE_TARGETS in their
+list of supported targets to indicate this. Clipboard managers are encouraged to 
+use this information to support legacy clients.
+
+
+Responsibilities of clipboard owners
+------------------------------------
+
+If a client needs to exit while owning the CLIPBOARD selection, it should request 
+the clipboard manager to take over the ownership of the clipboard, using the 
+SAVE_TARGETS mechanism. If there is no clipboard manager, or if the SAVE_TARGETS 
+conversion fails, the application should simply exit.
+
+Clients which support the SAVE_TARGETS mechanism should announce this by listing
+SAVE_TARGETS as a target for the CLIPBOARD. In this context, SAVE_TARGETS is used
+purely as a "marker target". If another client tries to convert the CLIPBOARD to
+SAVE_TARGETS, the clipboard owner should treat it like a side effect target without 
+any actual side effect.
+
+I order to support peers who use the XFIXES extension to watch clipboard ownership
+changes, clipboard owners should reacquire the clipboard whenever the content
+or metadata (e.g the list of supported targets) changes.
+
+In order to support clipboard managers who want to avoid storing large amounts
+of data, clipboard owners should support a target named TARGET_SIZES. When asked
+to convert the clipboard to TARGET_SIZES, the clipboard owner must set the named 
+property to format 32, type ATOM, and fill it with a list of pairs of target atoms 
+and integers. There should be exactly one list entry for each supported target, 
+and the integer should be
+a) -1 for side effect targets, or
+b) an estimate of the size in bytes of the result of converting the current
+   CLIPBOARD contents to the target, or
+c) 0 if it is too hard or impossible to determine the size, e.g. for MULTIPLE.
+
+

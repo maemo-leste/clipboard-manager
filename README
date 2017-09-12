@@ -1,0 +1,16 @@
+The clipboard manager
+=====================
+
+The clipboard manager is responsible for saving data when clients
+want to. It should be run as part of the session and stay running all
+the time.
+
+To start it manually, simply run the "clipboard-manager" binary.
+
+If the clipboard manager crashes with an X error, send the error
+output to andersca@imendio.com, then run "clipboard-manager --sync"
+and try reproducing the error. If the error is reproducable and the
+error output differs from the first one, send the other one too.
+
+
+

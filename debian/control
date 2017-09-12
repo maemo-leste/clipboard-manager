@@ -1,0 +1,13 @@
+Source: clipboard-manager
+Section: x11
+Priority: optional
+Maintainer: Mikael Hallendal <micke@imendio.com>
+Uploaders: Richard Hult <richard@imendio.com>, Anders Carlsson <andersca@imendio.com>, Johan Bilien <johan.bilien@nokia.com>
+Build-Depends: debhelper (>= 4.0.0), libx11-dev, libgconf2-dev (>= 2.16.0), libglib2.0-dev (>= 2.12.4), upstart-dev
+Standards-Version: 3.6.1.0
+
+Package: clipboard-manager
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: The clipboard manager is responsible for saving clipboard
+ data when clients want to.

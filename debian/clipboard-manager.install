@@ -1,0 +1,3 @@
+usr/bin/clipboard-manager
+etc/osso-af-init/clipboard.sh
+etc/gconf2xsettings.d/keys
