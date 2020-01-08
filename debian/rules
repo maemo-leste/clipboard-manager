@@ -20,7 +20,7 @@ endif
 configure: configure-stamp
 configure-stamp:
 	dh_testdir
-	env CFLAGS="$(CFLAGS)" LDFLAGS="${LDFLAGS} -lgobject-2.0" \
+	env CFLAGS="$(CFLAGS)" LDFLAGS="${LDFLAGS}" \
 		./configure \
 		--host="$(DEB_HOST_GNU_TYPE)" \
 		--build="$(DEB_BUILD_GNU_TYPE)" \

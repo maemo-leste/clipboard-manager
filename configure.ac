@@ -11,6 +11,7 @@ PKG_CHECK_MODULES(X, x11, [have_x=yes], [have_x=no])
 PKG_CHECK_MODULES(CM_DEPS,
 	[gconf-2.0 >= 2.16.0
 	 glib-2.0 >= 2.12.0
+	 gobject-2.0
 	])
 
 if test x$have_x = xno ; then
